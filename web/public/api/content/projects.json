@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "llm-content-moderation",
+    "title": "基于大模型的智能内容审核系统",
+    "date": "2026-06-01",
+    "tags": [
+      "LangGraph",
+      "RAG",
+      "Agent",
+      "多模态",
+      "Docker"
+    ],
+    "summary": "面向企业内容审核流程的多级自动审核系统：多模态风险识别 Macro-F1 74%→86%，高风险召回 79%→92%，人工复审占比 100%→64%。",
+    "pinned": true
+  },
+  {
+    "slug": "p2g-hai",
+    "title": "P2G-HAI：人物图像服装还原模型",
+    "date": "2025-12-01",
+    "tags": [
+      "科研",
+      "Stable Diffusion",
+      "生成式AI",
+      "计算机视觉"
+    ],
+    "summary": "生成式人工智能与计算机视觉方向研究，成果被 ICITES 录用；负责训练工程化，模型 FID 指标较基线下降 50%。",
+    "pinned": true
+  }
+]
