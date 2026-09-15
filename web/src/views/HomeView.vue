@@ -1,61 +1,117 @@
 <template>
   <div v-if="site" class="home">
-    <!-- Hero -->
+    <!-- Hero：名片式主视觉 -->
     <section class="hero">
-      <img v-if="site.owner.avatar" class="hero-avatar" :src="site.owner.avatar" alt="avatar" />
-      <div>
-        <h1 class="hero-name">{{ site.owner.displayName }}</h1>
-        <p class="hero-tagline">{{ site.owner.tagline }}</p>
-        <p class="hero-bio">{{ site.owner.bio }}</p>
-        <div class="hero-links">
-          <a v-if="site.owner.github" class="chip-link" :href="site.owner.github" target="_blank" rel="noopener">GitHub</a>
-          <a v-if="site.owner.email" class="chip-link" :href="'mailto:' + site.owner.email">Email</a>
-          <a v-for="l in site.owner.links || []" :key="l.url" class="chip-link" :href="l.url" target="_blank" rel="noopener">{{ l.name }}</a>
+      <div class="hero-watermark" aria-hidden="true">{{ site.siteName || 'cjy.log' }}</div>
+
+      <div class="hero-status"><span class="status-dot"></span>{{ statusText }}</div>
+
+      <div class="hero-top">
+        <div v-if="site.owner.avatar" class="hero-avatar-wrap">
+          <img class="hero-avatar" :src="site.owner.avatar" alt="avatar" />
+        </div>
+        <div>
+          <h1 class="hero-name">{{ site.owner.displayName }}</h1>
+          <p class="hero-tagline">
+            <span class="prompt">~/cjy $</span>{{ site.owner.tagline }}<span class="caret"></span>
+          </p>
         </div>
       </div>
+
+      <p class="hero-bio">{{ site.owner.bio }}</p>
+
+      <div class="hero-links">
+        <a v-if="site.owner.github" class="chip-link" :href="site.owner.github" target="_blank" rel="noopener">GitHub ↗</a>
+        <a v-if="site.owner.email" class="chip-link" :href="'mailto:' + site.owner.email">Email</a>
+        <a v-for="l in site.owner.links || []" :key="l.url" class="chip-link" :href="l.url" target="_blank" rel="noopener">{{ l.name }}</a>
+      </div>
     </section>
 
-    <!-- 固定专栏 -->
-    <section class="home-section">
-      <h2 class="section-title"><span class="section-index">01</span>固定专栏</h2>
-      <div class="column-grid">
-        <router-link v-for="c in columns" :key="c.key" class="column-card" :to="'/' + c.key">
-          <div class="column-card-top">
-            <span class="column-icon">{{ c.icon }}</span>
-            <span v-if="c.auto" class="auto-badge">auto</span>
+    <div class="home-layout">
+      <!-- 主栏 -->
+      <div class="home-main">
+        <!-- 固定专栏 -->
+        <section class="home-section">
+          <h2 class="section-title"><span class="section-index">01</span>固定专栏</h2>
+          <div class="column-grid">
+            <router-link v-for="c in columns" :key="c.key" class="column-card" :to="'/' + c.key">
+              <div class="column-card-top">
+                <span class="column-icon">{{ c.icon }}</span>
+                <span v-if="c.auto" class="auto-badge">auto</span>
+              </div>
+              <div class="column-name">{{ c.name }}</div>
+              <div class="column-desc">{{ c.desc }}</div>
+              <div class="column-meta">
+                <span>{{ c.count }} 篇</span>
+                <span v-if="c.latest">更新于 {{ c.latest }}</span>
+                <span v-else>待更新</span>
+              </div>
+            </router-link>
           </div>
-          <div class="column-name">{{ c.name }}</div>
-          <div class="column-desc">{{ c.desc }}</div>
-          <div class="column-meta">
-            <span>{{ c.count }} 篇</span>
-            <span v-if="c.latest">更新于 {{ c.latest }}</span>
-            <span v-else>待更新</span>
+        </section>
+
+        <!-- 精选项目 -->
+        <section v-if="pinned.length" class="home-section">
+          <h2 class="section-title">
+            <span class="section-index">02</span>精选项目
+            <router-link class="section-more" to="/projects">全部项目 →</router-link>
+          </h2>
+          <div class="card-list">
+            <EntryCard v-for="p in pinned" :key="p.slug" section="projects" :item="p" />
           </div>
-        </router-link>
-      </div>
-    </section>
+        </section>
 
-    <TimelineBlock v-if="site.education && site.education.length" title="教育经历" index="02" :items="site.education" />
-    <SkillGrid v-if="site.skills && site.skills.length" index="03" :groups="site.skills" />
-
-    <!-- 精选项目 -->
-    <section v-if="pinned.length" class="home-section">
-      <h2 class="section-title">
-        <span class="section-index">04</span>精选项目
-        <router-link class="section-more" to="/projects">全部项目 →</router-link>
-      </h2>
-      <div class="card-list">
-        <EntryCard v-for="p in pinned" :key="p.slug" section="projects" :item="p" />
+        <!-- 最近更新 -->
+        <section v-if="recent.length" class="home-section">
+          <h2 class="section-title"><span class="section-index">03</span>最近更新</h2>
+          <div class="changelog">
+            <a v-for="r in recent" :key="r.section + '/' + r.slug"
+              class="ch-row" :class="{ ext: r.link }"
+              :href="r.link ? r.link : '#' + '/' + r.section + '/' + encodeURIComponent(r.slug)"
+              :target="r.link ? '_blank' : undefined" :rel="r.link ? 'noopener' : undefined">
+              <span class="ch-date">{{ formatDate(r.date) }}</span>
+              <span class="ch-sec">{{ sectionName(r.section) }}</span>
+              <span class="ch-title">{{ r.title }}</span>
+              <span v-if="r.link" class="ch-ext">↗ repo</span>
+              <span v-else class="ch-arrow">→</span>
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- 最近更新 -->
-    <section v-if="recent.length" class="home-section">
-      <h2 class="section-title"><span class="section-index">05</span>最近更新</h2>
-      <div class="card-list">
-        <EntryCard v-for="r in recent" :key="r.section + '/' + r.slug" :section="r.section" :item="r" />
-      </div>
-    </section>
+      <!-- 侧栏 -->
+      <aside class="home-aside">
+        <TimelineBlock v-if="site.education && site.education.length"
+          compact title-en="EDUCATION" title="教育经历" :items="site.education" />
+        <SkillGrid v-if="site.skills && site.skills.length" compact :groups="site.skills" />
+
+        <div class="side-card">
+          <div class="side-card-title">Site Stats</div>
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat-num">{{ stats.total }}</div>
+              <div class="stat-label">篇内容 / entries</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">{{ stats.sections }}</div>
+              <div class="stat-label">个栏目 / columns</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">{{ stats.tags }}</div>
+              <div class="stat-label">个标签 / tags</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">{{ stats.projects }}</div>
+              <div class="stat-label">个项目 / repos</div>
+            </div>
+            <div class="stat wide">
+              <div class="stat-num">最近更新 {{ stats.latest }}</div>
+              <div class="stat-label">last commit</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
 
   <div v-else-if="error" class="not-found">
@@ -80,6 +136,39 @@ const site = computed(() => store.site)
 const columns = ref([])
 const pinned = ref([])
 const recent = ref([])
+const lists = ref({})
+
+const sectionName = (key) => (SECTIONS[key] ? SECTIONS[key].name : key)
+
+/* 状态徽标：从教育经历推导，如「深圳大学 · 硕士在读」 */
+const statusText = computed(() => {
+  const edu = site.value && site.value.education && site.value.education[0]
+  if (edu) {
+    const school = String(edu.school || '').split('·')[0].trim()
+    const degree = String(edu.degree || '')
+    const stage = /硕士/.test(degree) ? '硕士在读' : /博士/.test(degree) ? '博士在读' : degree
+    return [school, stage].filter(Boolean).join(' · ')
+  }
+  return site.value ? site.value.siteDescription : ''
+})
+
+const stats = computed(() => {
+  const all = Object.values(lists.value)
+  const total = all.reduce((n, l) => n + l.length, 0)
+  const tags = new Set()
+  let latest = ''
+  all.forEach((l) => l.forEach((it) => {
+    (it.tags || []).forEach((t) => tags.add(t))
+    if ((it.date || '') > latest) latest = it.date
+  }))
+  return {
+    total,
+    sections: Object.keys(SECTIONS).length,
+    tags: tags.size,
+    projects: (lists.value.projects || []).filter((p) => p.link).length,
+    latest: latest ? formatDate(latest) : '—'
+  }
+})
 
 onMounted(async () => {
   try {
@@ -88,6 +177,7 @@ onMounted(async () => {
     await Promise.all(Object.keys(SECTIONS).map(async (key) => {
       allLists[key] = await loadList(key)
     }))
+    lists.value = allLists
 
     // 固定专栏卡片：数量 + 最近更新日期
     columns.value = HOME_COLUMNS.map((key) => {
@@ -103,12 +193,12 @@ onMounted(async () => {
       }
     })
 
-    pinned.value = (allLists.projects || []).filter((p) => p.pinned).slice(0, 3)
+    pinned.value = (allLists.projects || []).filter((p) => p.pinned).slice(0, 4)
 
     recent.value = Object.keys(SECTIONS)
       .flatMap((key) => (allLists[key] || []).map((it) => ({ ...it, section: key })))
       .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-      .slice(0, 6)
+      .slice(0, 8)
   } catch (e) {
     error.value = e.message
   }

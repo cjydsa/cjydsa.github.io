@@ -61,7 +61,7 @@ export const SECTIONS = {
   papers: { name: '论文精读', icon: '📄', desc: '论文阅读笔记：问题、方法、结果与我的理解。' },
   snippets: { name: '代码片段', icon: '💻', desc: '可复用的代码片段与关键实现细节。' },
   posts: { name: '经验分享', icon: '💡', desc: '实习、求职与工程落地中的经验与思考。' },
-  projects: { name: '项目', icon: '🛠', desc: '做过的项目与工程实践 —— 做了什么、怎么做、结果多少。' }
+  projects: { name: '项目', icon: '🛠', desc: '做过的项目与工程实践。' }
 }
 
 /** 首页「固定专栏」区展示的栏目及顺序 */

@@ -1,6 +1,7 @@
 <template>
   <div class="list-page">
     <div class="list-page-header">
+      <div class="list-page-kicker">~/{{ section }}</div>
       <h1 class="list-page-title">{{ meta.name }}</h1>
       <p class="list-page-desc">{{ meta.desc }}</p>
     </div>
