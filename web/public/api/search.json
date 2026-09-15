@@ -1,5 +1,16 @@
 [
   {
+    "section": "daily",
+    "slug": "2026-09-15",
+    "title": "AI 每日快报 | 2026-09-15",
+    "summary": "特朗普公开驳斥AI减速呼吁、AI芯片股重挫；微软发布MAI模型行为准则草案；Anthropic算力承诺达5170亿美元；GPT-6 Astra登陆Amazon Bedrock；书生-S2与Occamy-1.0开源发布；CUDA-Q Logical面向容错量子计算；RSIAgent让开源模型反超闭源前沿。",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-15"
+  },
+  {
     "section": "projects",
     "slug": "llm-content-moderation",
     "title": "基于大模型的智能内容审核系统",
