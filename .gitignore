@@ -1,0 +1,14 @@
+# 前端构建产物与依赖
+web/node_modules/
+web/dist/
+
+# 生成的内容 API（构建产物，由 CI 重新生成；如需本地 dev 可先跑 build_content.py）
+# web/public/api/
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统文件
+.DS_Store
+Thumbs.db
