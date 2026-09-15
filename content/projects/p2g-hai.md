@@ -2,13 +2,16 @@
 title: P2G-HAI：人物图像服装还原模型
 date: 2025-12-01
 tags: [科研, Stable Diffusion, 生成式AI, 计算机视觉]
-summary: 生成式人工智能与计算机视觉方向研究，成果被 ICITES 录用；负责训练工程化，模型 FID 指标较基线下降 50%。
+summary: 基于 SD1.5 与混合注意力注入的人物图像服装还原（Person → Garment），成果被 ICITES 录用；FID 较基线下降 50%。代码与复现指南已开源。
 pinned: true
+link: https://github.com/cjydsa/P2G-HAI
 ---
 
 ## 概述
 
-P2G-HAI 是一个基于 **Stable Diffusion 1.5** 的人物图像服装还原模型，属于生成式 AI 与计算机视觉方向的研究工作，相关成果被 **ICITES** 录用（2025.06 — 2025.12）。
+P2G-HAI 是一个基于 **Stable Diffusion 1.5** 的人物图像服装还原模型（Person → Garment Restoration），属于生成式 AI 与计算机视觉方向的研究工作，相关成果被 **ICITES** 录用（2025.06 — 2025.12）。
+
+**代码与完整复现指南：[github.com/cjydsa/P2G-HAI](https://github.com/cjydsa/P2G-HAI)**
 
 ## 我的工作
 

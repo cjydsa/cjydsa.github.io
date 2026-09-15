@@ -9,6 +9,7 @@
           <span>{{ readingTime(item.markdown) }}</span>
         </div>
         <div class="article-tags">
+          <a v-if="item.link" class="tag repo-tag" :href="item.link" target="_blank" rel="noopener">↗ GitHub 仓库</a>
           <router-link v-for="t in item.tags" :key="t" class="tag" :to="'/tags/' + encodeURIComponent(t)">{{ t }}</router-link>
         </div>
       </div>

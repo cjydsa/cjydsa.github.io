@@ -1,5 +1,23 @@
 <template>
-  <router-link class="entry-card" :to="'/' + section + '/' + encodeURIComponent(item.slug)">
+  <!-- 有外链（如 GitHub 仓库）时，卡片直接跳转外链 -->
+  <a v-if="item.link" class="entry-card" :href="item.link" target="_blank" rel="noopener">
+    <div class="entry-card-header">
+      <span class="entry-card-title">{{ item.title }}</span>
+      <span class="link-badge">↗ repo</span>
+      <span v-if="item.pinned" class="pin-badge">pinned</span>
+    </div>
+    <div class="entry-card-meta">
+      <span>{{ sectionName }}</span>
+      <span v-if="item.date">{{ formatDate(item.date) }}</span>
+      <span class="meta-link">{{ item.link.replace(/^https?:\/\//, '') }}</span>
+    </div>
+    <p v-if="item.summary" class="entry-card-summary">{{ item.summary }}</p>
+    <div class="entry-card-tags">
+      <span v-for="t in item.tags" :key="t" class="tag">{{ t }}</span>
+    </div>
+  </a>
+
+  <router-link v-else class="entry-card" :to="'/' + section + '/' + encodeURIComponent(item.slug)">
     <div class="entry-card-header">
       <span class="entry-card-title">{{ item.title }}</span>
       <span v-if="item.pinned" class="pin-badge">pinned</span>

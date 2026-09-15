@@ -36,13 +36,12 @@
     </section>
 
     <TimelineBlock v-if="site.education && site.education.length" title="教育经历" index="02" :items="site.education" />
-    <TimelineBlock v-if="site.experience && site.experience.length" title="实习经历" index="03" :items="site.experience" />
-    <SkillGrid v-if="site.skills && site.skills.length" index="04" :groups="site.skills" />
+    <SkillGrid v-if="site.skills && site.skills.length" index="03" :groups="site.skills" />
 
     <!-- 精选项目 -->
     <section v-if="pinned.length" class="home-section">
       <h2 class="section-title">
-        <span class="section-index">05</span>精选项目
+        <span class="section-index">04</span>精选项目
         <router-link class="section-more" to="/projects">全部项目 →</router-link>
       </h2>
       <div class="card-list">
@@ -52,7 +51,7 @@
 
     <!-- 最近更新 -->
     <section v-if="recent.length" class="home-section">
-      <h2 class="section-title"><span class="section-index">06</span>最近更新</h2>
+      <h2 class="section-title"><span class="section-index">05</span>最近更新</h2>
       <div class="card-list">
         <EntryCard v-for="r in recent" :key="r.section + '/' + r.slug" :section="r.section" :item="r" />
       </div>

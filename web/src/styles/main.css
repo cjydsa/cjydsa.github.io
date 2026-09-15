@@ -514,6 +514,33 @@ a.tag:hover { border-color: var(--accent); color: var(--accent); background: var
   white-space: nowrap;
 }
 
+.link-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #1a7f37;
+  background: rgba(26, 127, 55, 0.1);
+  border: 1px solid rgba(26, 127, 55, 0.25);
+  padding: 1px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+[data-theme="dark"] .link-badge {
+  color: #3fb950;
+  background: rgba(63, 185, 80, 0.12);
+  border-color: rgba(63, 185, 80, 0.3);
+}
+
+.meta-link { color: var(--accent); }
+
+.repo-tag {
+  color: #1a7f37;
+  border-color: rgba(26, 127, 55, 0.35);
+  font-weight: 600;
+}
+.repo-tag:hover { color: #1a7f37; background: rgba(26, 127, 55, 0.12); }
+[data-theme="dark"] .repo-tag { color: #3fb950; border-color: rgba(63, 185, 80, 0.4); }
+[data-theme="dark"] .repo-tag:hover { color: #3fb950; background: rgba(63, 185, 80, 0.15); }
+
 .entry-card-meta {
   font-family: var(--font-mono);
   font-size: 12px;

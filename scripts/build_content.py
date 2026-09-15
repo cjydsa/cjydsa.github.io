@@ -133,6 +133,9 @@ def build_section(section: str):
             "summary": str(meta.get("summary") or ""),
             "pinned": bool(meta.get("pinned")),
         }
+        # 可选外链（如 GitHub 仓库），存在时前端卡片点击直接跳转外链
+        if meta.get("link"):
+            item["link"] = str(meta["link"])
         items.append(item)
 
         detail = dict(item)

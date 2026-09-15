@@ -17,7 +17,7 @@
     "section": "projects",
     "slug": "p2g-hai",
     "title": "P2G-HAI：人物图像服装还原模型",
-    "summary": "生成式人工智能与计算机视觉方向研究，成果被 ICITES 录用；负责训练工程化，模型 FID 指标较基线下降 50%。",
+    "summary": "基于 SD1.5 与混合注意力注入的人物图像服装还原（Person → Garment），成果被 ICITES 录用；FID 较基线下降 50%。代码与复现指南已开源。",
     "tags": [
       "科研",
       "Stable Diffusion",
