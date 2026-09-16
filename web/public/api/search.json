@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-16",
+    "title": "AI 每日快报 | 2026-09-16",
+    "summary": "OpenAI洽谈1.2万亿美元估值新融资；马斯克提议AI巨头发布前同行互测；谷歌发布Gemini 3.8 Live双语音模型；阶跃星辰StepAudio 3五款语音模型多项全球第一；飞书8.0与豆包工作伙伴发布；《人工智能安全治理框架3.0》首次单列智能体风险；华为发布全球首个3D数据中心；Meta自研MTIA芯片2027进数据中心；曙光8000实现1小时全球10天预报；Atria Dawn 744B与ZGCM-1开源发布；DeepMind百智能体实验揭示作弊与举报行为。",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-16"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-15",
     "title": "AI 每日快报 | 2026-09-15",
     "summary": "特朗普公开驳斥AI减速呼吁、AI芯片股重挫；微软发布MAI模型行为准则草案；Anthropic算力承诺达5170亿美元；GPT-6 Astra登陆Amazon Bedrock；书生-S2与Occamy-1.0开源发布；CUDA-Q Logical面向容错量子计算；RSIAgent让开源模型反超闭源前沿。",

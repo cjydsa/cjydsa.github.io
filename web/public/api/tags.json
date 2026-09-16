@@ -2,12 +2,24 @@
   "AI": [
     {
       "section": "daily",
+      "slug": "2026-09-16",
+      "title": "AI 每日快报 | 2026-09-16",
+      "date": "2026-09-16"
+    },
+    {
+      "section": "daily",
       "slug": "2026-09-15",
       "title": "AI 每日快报 | 2026-09-15",
       "date": "2026-09-15"
     }
   ],
   "Daily Brief": [
+    {
+      "section": "daily",
+      "slug": "2026-09-16",
+      "title": "AI 每日快报 | 2026-09-16",
+      "date": "2026-09-16"
+    },
     {
       "section": "daily",
       "slug": "2026-09-15",
