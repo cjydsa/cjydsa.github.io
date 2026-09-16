@@ -2,16 +2,18 @@
   {
     "slug": "llm-content-moderation",
     "title": "基于大模型的智能内容审核系统",
-    "date": "2026-06-01",
+    "date": "2026-09-16",
     "tags": [
       "LangGraph",
       "RAG",
       "Agent",
       "多模态",
-      "Docker"
+      "LLM",
+      "Hybrid"
     ],
-    "summary": "面向企业内容审核流程的多级自动审核系统：多模态风险识别 Macro-F1 74%→86%，高风险召回 79%→92%，人工复审占比 100%→64%。",
-    "pinned": true
+    "summary": "面向企业内容审核流程的五维 AI 多智能体审核系统，支持 LLM 打分理由、多模态视觉分析、hybrid 执行模式与不可变审计。",
+    "pinned": true,
+    "link": "https://github.com/cjydsa/social-media-agent"
   },
   {
     "slug": "p2g-hai",
