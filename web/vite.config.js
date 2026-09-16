@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import react from '@vitejs/plugin-react'
 
 // cjydsa.github.io 为用户主页仓库，部署在根路径
 export default defineConfig({
   base: '/',
-  plugins: [vue()],
+  plugins: [react()],
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    chunkSizeWarningLimit: 1200
   }
 })

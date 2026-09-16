@@ -1,34 +1,27 @@
-import { reactive } from 'vue'
 import { api } from './api/client'
 
-/**
- * 轻量全局状态：站点配置 + 各栏目列表缓存。
- * 数据来自构建期生成的 JSON API（见 scripts/build_content.py）。
- */
-export const store = reactive({
-  site: null,
-  lists: { projects: null, notes: null, posts: null },
-  searchIndex: null,
-  error: null
-})
+// 轻量数据缓存：站点配置 + 各栏目列表 + 搜索索引
+// 数据来源为构建期由 scripts/build_content.py 生成的静态 JSON API
+const cache = { site: null, lists: {}, searchIndex: null }
 
 export async function loadSite() {
-  if (store.site) return store.site
-  store.site = await api.site()
-  document.title = store.site.siteName || 'cjy.log'
-  return store.site
+  if (!cache.site) {
+    cache.site = await api.site()
+    document.title = cache.site.siteName || 'cjy.log'
+  }
+  return cache.site
 }
 
 export async function loadList(section) {
-  if (!store.lists[section]) {
-    store.lists[section] = await api.list(section)
+  if (!cache.lists[section]) {
+    cache.lists[section] = await api.list(section)
   }
-  return store.lists[section]
+  return cache.lists[section]
 }
 
 export async function loadSearchIndex() {
-  if (!store.searchIndex) {
-    store.searchIndex = await api.search()
+  if (!cache.searchIndex) {
+    cache.searchIndex = await api.search()
   }
-  return store.searchIndex
+  return cache.searchIndex
 }
