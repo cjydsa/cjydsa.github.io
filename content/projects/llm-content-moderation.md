@@ -1,8 +1,9 @@
 ---
 title: 基于大模型的智能内容审核系统
-date: 2026-06-01
-tags: [LangGraph, RAG, Agent, 多模态, Docker]
-summary: 面向企业内容审核流程的多级自动审核系统：多模态风险识别 Macro-F1 74%→86%，高风险召回 79%→92%，人工复审占比 100%→64%。
+date: 2026-09-16
+tags: [LangGraph, RAG, Agent, 多模态, LLM, Hybrid]
+summary: 面向企业内容审核流程的五维 AI 多智能体审核系统，支持 LLM 打分理由、多模态视觉分析、hybrid 执行模式与不可变审计。
+link: https://github.com/cjydsa/social-media-agent
 pinned: true
 ---
 
@@ -10,37 +11,52 @@ pinned: true
 
 企业内容审核流程中存在三类典型问题：审核规则分散难统一、多人协作状态难追踪、全量人工复审成本高。系统目标是让 AI 完成初筛与风险定位，人只处理真正需要判断的样本。
 
-## 多级审核工作流
+## 五维 AI 审核
 
-- 基于 **LangGraph** 设计多级自动审核与人工复核机制
-- 实现内容版本管理、风险分级、异常退回、高风险升级与审批记录留痕
-- 提升审核流程的标准化与可追溯性
+基于 **LangGraph** 设计五级多智能体并行审核：公关与舆情 / 运营与渠道 / 产品与事实 / 客户与用户 / 合规与安全，每个维度独立输出 0–100 风险分、置信度、结论、问题定位与修改建议。
 
-## 公关审核与知识检索
+风险路由支持 **PASS / REVISE / HUMAN_REVIEW / BLOCK** 四级决策，确定性安全闸门，任何失败一律进入人工，绝不默认通过。
 
-- 构建品牌规范、平台规则、安全要求及历史案例知识库
-- 融合 **BM25 与向量检索**召回审核依据
-- 结合结构化规则与 LLM Reviewer 输出风险类型、证据和修改建议
-- 识别事实失实、绝对化宣传、品牌口径及敏感表达
+## 多模态深度分析
 
-## 多模态视觉审核
+使用 **Qwen VL** 视觉语言模型对上传的图片进行 OCR 文字提取、画面要素识别与视觉风险观察，作为 MULTIMODAL_EVIDENCE 证据项注入审核证据池。
 
-- 使用 OCR 与视觉语言模型提取图片文字、Logo、人物及版式信息
-- 检查图文一致性、品牌视觉规范和敏感元素
-- 在 300 条人工标注图文数据上：
+当图片视觉分析失败或未配置时，MULTIMODAL_EVIDENCE 记为 missing -> Policy Guard 强制 **HUMAN_REVIEW**（fail closed，不假装看过图）。
 
-| 指标 | 优化前 | 优化后 |
-| --- | --- | --- |
-| 风险识别 Macro-F1 | 74% | **86%** |
-| 高风险召回率 | 79% | **92%** |
+## Hybrid LLM 执行模式
 
-## 人工审批与可靠性
+系统支持两种审核模式：
+- **Mock 模式**（默认）：使用预置 scenario profile，零 API Key 也可运行，适合开发测试。
+- **Hybrid 模式**：planner / specialist / critic / judge / revision 五个智能体由真实 LLM structured output 驱动，每个维度输出具体中文打分理由（引用原文片段 + 证据），prompt 含打分锚点、few-shot 示例与跨维度冲突自检。
 
-- 基于 Agent Inbox 支持通过、修改、退回及拒绝发布
-- 记录审核节点、风险证据、版本差异和审批人
-- 高风险误放率 **13% → 4%**
-- 在保持 92% 高风险召回率的前提下，人工复审样本占比 **100% → 64%**
+## 多级人工审批流
+
+- 运营 -> 视觉 -> 合规 -> 负责人逐级审批，角色 x 阶段权限矩阵，提交者不能自审。
+- 每次修订生成新版本，旧版本只读，支持任意两版差异对比。
+- 审计时间线全程 append-only 留痕。
 
 ## 技术栈
 
-`LangGraph` · `RAG` · `LangSmith` · `Docker` · OCR / VLM · BM25 + 向量检索
+LangGraph · RAG (BM25+向量) · Qwen VL · DeepSeek · Node.js/TypeScript · React
+
+## 本地配置
+
+复制 .env.pr-review.example 为 .env，填入对应 provider 的 API Key 即可切换为真实模型：
+
+# DeepSeek
+LLM_PROVIDER=deepseek
+LLM_MODEL=deepseek-v4-flash
+DEEPSEEK_API_KEY=sk-xxxxx
+
+# Qwen（视觉分析也使用 Qwen）
+LLM_PROVIDER=qwen
+LLM_MODEL=qwen-plus
+DASHSCOPE_API_KEY=sk-xxxxx
+QWEN_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+
+# 启用视觉分析（可选）
+PR_REVIEW_EXECUTION_MODE=hybrid
+PR_REVIEW_VISION_PROVIDER=qwen
+PR_REVIEW_VISION_MODEL=qwen-vl-plus
+
+详细配置说明见仓库文档 docs/pr-review/06-environment-and-api-config.md。
