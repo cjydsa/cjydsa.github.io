@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-17",
+    "title": "AI 每日快报 | 2026-09-17",
+    "summary": "冯德莱恩盟情咨文将AI与气候变化并列为时代临界点并支持前沿模型减速；诺和诺德与Anthropic合作用Claude加速新药研发；字节分拆AI制药公司Anew Labs完成2.9亿美元融资；B站AI无限竞技场上线；Anthropic将Claude Cowork与聊天合并并推出Docs/Slides；网易有道开源子曰4两款同传模型；讯飞发布全国产算力训练的语音基座大模型Spark-Audio；英伟达谷歌成立AI能源管理联盟拟释放100GW电网容量；苹果据称开发M8 Ultra AI服务器；英特尔CEO预警内存价格暴涨57倍；OpenAI发布模型错位披露框架并公开六份报告；清华稳准智能LimiX-2登顶结构化数据基准；小米首次公开直播MiMo-V2.6强化学习训练。",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-17"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-16",
     "title": "AI 每日快报 | 2026-09-16",
     "summary": "OpenAI洽谈1.2万亿美元估值新融资；马斯克提议AI巨头发布前同行互测；谷歌发布Gemini 3.8 Live双语音模型；阶跃星辰StepAudio 3五款语音模型多项全球第一；飞书8.0与豆包工作伙伴发布；《人工智能安全治理框架3.0》首次单列智能体风险；华为发布全球首个3D数据中心；Meta自研MTIA芯片2027进数据中心；曙光8000实现1小时全球10天预报；Atria Dawn 744B与ZGCM-1开源发布；DeepMind百智能体实验揭示作弊与举报行为。",
@@ -25,15 +36,16 @@
     "section": "projects",
     "slug": "llm-content-moderation",
     "title": "基于大模型的智能内容审核系统",
-    "summary": "面向企业内容审核流程的多级自动审核系统：多模态风险识别 Macro-F1 74%→86%，高风险召回 79%→92%，人工复审占比 100%→64%。",
+    "summary": "面向企业内容审核流程的五维 AI 多智能体审核系统，支持 LLM 打分理由、多模态视觉分析、hybrid 执行模式与不可变审计。",
     "tags": [
       "LangGraph",
       "RAG",
       "Agent",
       "多模态",
-      "Docker"
+      "LLM",
+      "Hybrid"
     ],
-    "date": "2026-06-01"
+    "date": "2026-09-16"
   },
   {
     "section": "projects",

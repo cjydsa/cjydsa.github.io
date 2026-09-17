@@ -2,6 +2,12 @@
   "AI": [
     {
       "section": "daily",
+      "slug": "2026-09-17",
+      "title": "AI 每日快报 | 2026-09-17",
+      "date": "2026-09-17"
+    },
+    {
+      "section": "daily",
       "slug": "2026-09-16",
       "title": "AI 每日快报 | 2026-09-16",
       "date": "2026-09-16"
@@ -14,6 +20,12 @@
     }
   ],
   "Daily Brief": [
+    {
+      "section": "daily",
+      "slug": "2026-09-17",
+      "title": "AI 每日快报 | 2026-09-17",
+      "date": "2026-09-17"
+    },
     {
       "section": "daily",
       "slug": "2026-09-16",
@@ -32,7 +44,7 @@
       "section": "projects",
       "slug": "llm-content-moderation",
       "title": "基于大模型的智能内容审核系统",
-      "date": "2026-06-01"
+      "date": "2026-09-16"
     }
   ],
   "RAG": [
@@ -40,7 +52,7 @@
       "section": "projects",
       "slug": "llm-content-moderation",
       "title": "基于大模型的智能内容审核系统",
-      "date": "2026-06-01"
+      "date": "2026-09-16"
     }
   ],
   "Agent": [
@@ -48,7 +60,7 @@
       "section": "projects",
       "slug": "llm-content-moderation",
       "title": "基于大模型的智能内容审核系统",
-      "date": "2026-06-01"
+      "date": "2026-09-16"
     }
   ],
   "多模态": [
@@ -56,15 +68,23 @@
       "section": "projects",
       "slug": "llm-content-moderation",
       "title": "基于大模型的智能内容审核系统",
-      "date": "2026-06-01"
+      "date": "2026-09-16"
     }
   ],
-  "Docker": [
+  "LLM": [
     {
       "section": "projects",
       "slug": "llm-content-moderation",
       "title": "基于大模型的智能内容审核系统",
-      "date": "2026-06-01"
+      "date": "2026-09-16"
+    }
+  ],
+  "Hybrid": [
+    {
+      "section": "projects",
+      "slug": "llm-content-moderation",
+      "title": "基于大模型的智能内容审核系统",
+      "date": "2026-09-16"
     }
   ],
   "科研": [
