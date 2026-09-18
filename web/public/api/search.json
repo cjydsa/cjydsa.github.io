@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-18",
+    "title": "AI 每日快报 | 2026-09-18",
+    "summary": "华为发布全球首个NPO超节点昇腾960并可扩展至百万卡集群；Anthropic披露Claude已主导26%内部AI研发并公开透明度指标；OpenAI推出法律AI平台Astra for Law并上线广告智能体Sponsored Agents；阿里达摩院通用医疗影像AI模型DAMO RADAR登上Science正刊并开源；英王查尔斯三世召集头部实验室举行AI安全峰会；地瓜机器人完成4亿美元C轮融资；Kimi发布金融行业解决方案并落地数十家头部机构；英伟达公布Vera Rubin NVL72首个MLPerf推理预览成绩。",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-18"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-17",
     "title": "AI 每日快报 | 2026-09-17",
     "summary": "冯德莱恩盟情咨文将AI与气候变化并列为时代临界点并支持前沿模型减速；诺和诺德与Anthropic合作用Claude加速新药研发；字节分拆AI制药公司Anew Labs完成2.9亿美元融资；B站AI无限竞技场上线；Anthropic将Claude Cowork与聊天合并并推出Docs/Slides；网易有道开源子曰4两款同传模型；讯飞发布全国产算力训练的语音基座大模型Spark-Audio；英伟达谷歌成立AI能源管理联盟拟释放100GW电网容量；苹果据称开发M8 Ultra AI服务器；英特尔CEO预警内存价格暴涨57倍；OpenAI发布模型错位披露框架并公开六份报告；清华稳准智能LimiX-2登顶结构化数据基准；小米首次公开直播MiMo-V2.6强化学习训练。",
