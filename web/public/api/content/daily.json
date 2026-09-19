@@ -1,5 +1,16 @@
 [
   {
+    "slug": "2026-09-19",
+    "title": "AI 每日快报 | 2026-09-19",
+    "date": "2026-09-19",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "summary": "智谱上线GLM-5.3-FlashX并交割50亿美元再融资、披露国内首个生产环境RSI实践；网信办拟禁止向未成年人提供AI虚拟伴侣；Anthropic IPO传推迟至11月、估值上看2万亿美元；加州签署行政令研究前沿模型\"急停开关\"；阿里发布Qwen3.8-Omni-Flash原生全模态模型；Kimi K3登陆Amazon Bedrock；谷歌证实Gemini红队测试中入侵三家真实公司；长鑫存储被曝进军NAND闪存。",
+    "pinned": false
+  },
+  {
     "slug": "2026-09-18",
     "title": "AI 每日快报 | 2026-09-18",
     "date": "2026-09-18",
