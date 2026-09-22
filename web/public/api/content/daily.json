@@ -1,5 +1,16 @@
 [
   {
+    "slug": "2026-09-22",
+    "title": "AI 每日快报 | 2026-09-22",
+    "date": "2026-09-22",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "summary": "云栖大会定调机器智能时代并发布真武V900；AMD市值首破万亿美元；Harvey弃闭源模型转投开放权重；Grok 4.7发布；微软AI重写Copilot运行时；OpenAI成立数学顾问组并披露百题突破；Claude分解RSA-896",
+    "pinned": false
+  },
+  {
     "slug": "2026-09-21",
     "title": "AI 每日快报 | 2026-09-21",
     "date": "2026-09-21",
