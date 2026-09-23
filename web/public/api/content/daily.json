@@ -1,5 +1,16 @@
 [
   {
+    "slug": "2026-09-23",
+    "title": "AI 每日快报 | 2026-09-23",
+    "date": "2026-09-23",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "summary": "Anthropic与OpenAI相隔90分钟同日开打前沿模型价格战；Meta Muse智能体陷零日漏洞与亚马逊封禁双重危机；字节Dramagic、Kimi Code桌面版上线；Google开源智能体运行时AX；高通2nm双旗舰端侧可跑300亿参数模型；Epoch AI测算同等智能成本每季度降47%",
+    "pinned": false
+  },
+  {
     "slug": "2026-09-22",
     "title": "AI 每日快报 | 2026-09-22",
     "date": "2026-09-22",

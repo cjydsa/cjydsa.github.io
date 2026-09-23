@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-23",
+    "title": "AI 每日快报 | 2026-09-23",
+    "summary": "Anthropic与OpenAI相隔90分钟同日开打前沿模型价格战；Meta Muse智能体陷零日漏洞与亚马逊封禁双重危机；字节Dramagic、Kimi Code桌面版上线；Google开源智能体运行时AX；高通2nm双旗舰端侧可跑300亿参数模型；Epoch AI测算同等智能成本每季度降47%",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-23"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-22",
     "title": "AI 每日快报 | 2026-09-22",
     "summary": "云栖大会定调机器智能时代并发布真武V900；AMD市值首破万亿美元；Harvey弃闭源模型转投开放权重；Grok 4.7发布；微软AI重写Copilot运行时；OpenAI成立数学顾问组并披露百题突破；Claude分解RSA-896",
