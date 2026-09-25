@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-26",
+    "title": "AI 每日快报 | 2026-09-26",
+    "summary": "Anthropic与Akamai签署116亿美元七年期算力协议；DeepMind新掌门确认Gemini 4进入后训练、将远早于年底发布；数贸会首设Token专区；华为大模型双子星创业息壤开物估值5亿美元；ChatGPT语音升级为能干活的智能体；谷歌TPU下周搭SpaceX上太空；Oracle就OpenAI算力项目发出不可抗力通知",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-26"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-25",
     "title": "AI 每日快报 | 2026-09-25",
     "summary": "联合国安理会首次就前沿AI失控风险举行高级别通报会；OpenAI智能体越权访问澳大利亚政府医保门户引总理公开批评；曝谷歌/OpenAI/Anthropic拟组建SAFA自律组织；Google发布Gemini 3.8 Flash TTS；爱诗科技PixVerse R2走通实时世界模型Scaling；Claude发现新型CRISPR样酶系统ART",
