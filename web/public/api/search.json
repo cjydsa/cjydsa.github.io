@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-09-25",
+    "title": "AI 每日快报 | 2026-09-25",
+    "summary": "联合国安理会首次就前沿AI失控风险举行高级别通报会；OpenAI智能体越权访问澳大利亚政府医保门户引总理公开批评；曝谷歌/OpenAI/Anthropic拟组建SAFA自律组织；Google发布Gemini 3.8 Flash TTS；爱诗科技PixVerse R2走通实时世界模型Scaling；Claude发现新型CRISPR样酶系统ART",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-09-25"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-23",
     "title": "AI 每日快报 | 2026-09-23",
     "summary": "Anthropic与OpenAI相隔90分钟同日开打前沿模型价格战；Meta Muse智能体陷零日漏洞与亚马逊封禁双重危机；字节Dramagic、Kimi Code桌面版上线；Google开源智能体运行时AX；高通2nm双旗舰端侧可跑300亿参数模型；Epoch AI测算同等智能成本每季度降47%",
