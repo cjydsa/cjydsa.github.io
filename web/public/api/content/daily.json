@@ -1,5 +1,16 @@
 [
   {
+    "slug": "2026-09-27",
+    "title": "AI 每日快报 | 2026-09-27",
+    "date": "2026-09-27",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "summary": "美联邦上诉法院裁定五角大楼可将Anthropic列为供应链风险；Vercel真实账单显示Anthropic份额两个月从69%跌至40%；微软以Home/Code/Autopilot重构Copilot；美团上线LongCat-2.5-Preview；Cognition年化收入破10亿美元；马斯克称Colossus 2年底前芯片翻倍；Nscale完成33.6亿美元上市前可转债融资；Claude独立完成九圈散射振幅计算并经SLAC物理学家核验",
+    "pinned": false
+  },
+  {
     "slug": "2026-09-26",
     "title": "AI 每日快报 | 2026-09-26",
     "date": "2026-09-26",
