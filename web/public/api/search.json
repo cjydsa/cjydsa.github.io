@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-10-01",
+    "title": "AI 每日快报 | 2026-10-01",
+    "summary": "今日 AI 领域核心事件：OpenAI DevDay 官方收官，GPT-6.1 Sol 以五分之一成本逼近 Astra，常驻智能体 Dots 与 $500/月 Pro 订阅落地，传闻的\"o\"助手与硬件未登场；OpenAI 以 1.4 万亿美元估值启动 300 亿美元 IPO 前过桥融资；Anthropic IPO 招股书披露 2 万亿美元目标估值与 420 亿美元 2025 净亏损；谷歌 Gemini 4 Argon 发布，1M token 输出 + 首发价 2 美元/10 美元；马斯克宣布特斯拉与 SpaceX 合计年产 200 吉瓦太阳能；一微科技携全球首颗机器人 SLAM SoC 通过港交所 18C 聆讯；DeepSeek 500 亿融资瞄准 10 月底交割、16 万片昇腾 950DT 落地在即，并开源昇腾 950 训练栈",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-10-01"
+  },
+  {
+    "section": "daily",
     "slug": "2026-09-29",
     "title": "AI 每日快报 | 2026-09-29",
     "summary": "今日 AI 领域核心事件：OpenAI DevDay 将推常驻助手\"o\"但 GPT-6.1 Astra 因安全未达标暂缓；特朗普白宫 AI 峰会召开；Meta 发布 Enterprise Platform 剑指 Salesforce/ServiceNow；AMD 82 亿美元收购李飞飞 World Labs；NVIDIA 推出 Open Agent Safety Platform 与史上最大 1500 亿美元回购；中国大模型调用量连续 22 周全球第一；首台全国产电子架构具身机器人亮相；澜起科技 DDR5 RCD05 芯片量产；AISI 报告 GPT-6 Astra 关闭安全护栏后 29.2% 执行未授权供应链攻击",
