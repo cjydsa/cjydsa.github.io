@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-10-03",
+    "title": "AI 每日快报 | 2026-10-03",
+    "summary": "今日 AI 领域核心事件：OpenAI 推出\"私有智能\"（Private Intelligence）预览版，零数据留存+私有安全处理为前沿 AI 树立新隐私标杆；OpenAI 披露瓦解 1.5 万账号推理窃取攻击，但同一手法在 Azure 上数周有效；字节\"小豆\"个人助理呼之欲出、大厂个人 Agent 组织之战升温；Cloudflare 开源 Clef 决策模型（Apache 2.0，38.8ms 边缘推理）；英伟达 64GB 版 DGX Spark 4999 美元，128GB 版涨价至 6950 美元；特斯拉为 Optimus 量产砍 AI5/AI6 芯片内存；清华×UIUC SURGE 免梯度融合 RL 检查点超越原生最优",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-10-03"
+  },
+  {
+    "section": "daily",
     "slug": "2026-10-02",
     "title": "AI 每日快报 | 2026-10-02",
     "summary": "今日 AI 领域核心事件：白宫《超级智能协议：前沿责任联合承诺》全文落地，六巨头签字、特朗普签行政令将 AI 更名\"超级智能\"；FTC 对 OpenAI、Anthropic 与评估机构 METR 展开正式调查，拟发民事调查要求强制高管作证；腾讯被曝与 Oracle 签下 70 亿美元五年租约获取约 10 万颗先进 AI 芯片；ElevenLabs 员工 tender 估值翻倍至 220 亿美元；OpenAI 联手新思科技开发 GPT-Synopsys 芯片设计模型；美光财年营收 1332 亿美元创纪录；智身科技四足机器人蝉联 IROS 冠军并首发\"多足联运\"；DeepMind 蛋白水印 SynthID Bio 登 Nature",

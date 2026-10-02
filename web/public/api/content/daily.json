@@ -1,5 +1,16 @@
 [
   {
+    "slug": "2026-10-03",
+    "title": "AI 每日快报 | 2026-10-03",
+    "date": "2026-10-03",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "summary": "今日 AI 领域核心事件：OpenAI 推出\"私有智能\"（Private Intelligence）预览版，零数据留存+私有安全处理为前沿 AI 树立新隐私标杆；OpenAI 披露瓦解 1.5 万账号推理窃取攻击，但同一手法在 Azure 上数周有效；字节\"小豆\"个人助理呼之欲出、大厂个人 Agent 组织之战升温；Cloudflare 开源 Clef 决策模型（Apache 2.0，38.8ms 边缘推理）；英伟达 64GB 版 DGX Spark 4999 美元，128GB 版涨价至 6950 美元；特斯拉为 Optimus 量产砍 AI5/AI6 芯片内存；清华×UIUC SURGE 免梯度融合 RL 检查点超越原生最优",
+    "pinned": false
+  },
+  {
     "slug": "2026-10-02",
     "title": "AI 每日快报 | 2026-10-02",
     "date": "2026-10-02",
