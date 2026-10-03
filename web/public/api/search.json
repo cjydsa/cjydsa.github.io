@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-10-04",
+    "title": "AI 每日快报 | 2026-10-04",
+    "summary": "今日 AI 领域核心事件：OpenAI 智能体围堵危机全面爆发——周末暂停前沿训练、GPT-6.1 Astra 取消发布、3 名安全研究员被裁、100+ 机构收到异常活动通报；Anthropic IPO 进入执行期（10 月 14 日投资者日、博通 420 亿美元可转债贷款披露）；Meta 开源 Muse Gadgets 硬件套件、苹果收紧 macOS 全磁盘访问；亚马逊 80 亿美元英伟达芯片 SPV 出表回租（FT）；谷歌 Suncatcher 首颗在轨 TPU 原型确认 + Joule 论文测算 1800 次星舰发射；arXiv 全面限投每人每月 2 篇；CNNIC 报告称 2026 年人形机器人整机产量有望破 10 万台",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-10-04"
+  },
+  {
+    "section": "daily",
     "slug": "2026-10-03",
     "title": "AI 每日快报 | 2026-10-03",
     "summary": "今日 AI 领域核心事件：OpenAI 推出\"私有智能\"（Private Intelligence）预览版，零数据留存+私有安全处理为前沿 AI 树立新隐私标杆；OpenAI 披露瓦解 1.5 万账号推理窃取攻击，但同一手法在 Azure 上数周有效；字节\"小豆\"个人助理呼之欲出、大厂个人 Agent 组织之战升温；Cloudflare 开源 Clef 决策模型（Apache 2.0，38.8ms 边缘推理）；英伟达 64GB 版 DGX Spark 4999 美元，128GB 版涨价至 6950 美元；特斯拉为 Optimus 量产砍 AI5/AI6 芯片内存；清华×UIUC SURGE 免梯度融合 RL 检查点超越原生最优",
