@@ -33,6 +33,12 @@ Markdown 文件头部使用 YAML 风格 frontmatter:
   - 文件名（不含扩展名）即 slug，URL 为 #/{section}/{slug}
   - 以 "_" 开头的文件（如 _template.md）与 draft: true 的文件不参与构建
   - 列表按 date 倒序排列
+  - content/ 栏目目录（一级）下的非 Markdown 文件（图片等）会被原样复制到
+    web/public/assets/（同名冲突时构建报错，请给文件名加栏目前缀），
+    文章中用站点根相对的相对路径引用，例如（把 fig1.png 放在
+    content/papers/ 下）:
+        ![示意图](assets/fig1.png)
+    （SPA 文档 URL 固定在站点根，相对路径会解析为 /assets/fig1.png）
   - 零第三方依赖，Python 3.8+ 标准库即可运行
 
 扩展新内容类型:
@@ -50,6 +56,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 OUT_DIR = ROOT / "web" / "public" / "api"
+# 静态资产输出到站点根下的 /assets/（Vite 会把 public/ 原样拷到 dist 根），
+# 文章中用相对路径 ![x](assets/xxx.png) 引用（hash 路由下文档 URL 固定在根）。
+ASSETS_OUT_DIR = OUT_DIR.parent / "assets"
 SITE_CONFIG = ROOT / "site.config.json"
 
 SECTIONS = ["daily", "reports", "projects", "notes", "papers", "snippets", "posts"]
@@ -157,6 +166,33 @@ def build_section(section: str):
     return items
 
 
+def build_assets():
+    """分发静态资产：content/ 栏目目录（一级）下的非 Markdown 文件 -> web/public/assets/。
+
+    Vite 会把 public/ 目录原样拷到构建产物根，因此文章里用站点根相对的
+    相对路径 ![x](assets/xxx.png) 引用即可（hash 路由下文档 URL 固定在根）。
+    以 "_" 开头的文件（模板等）不复制。
+    """
+    ASSETS_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    count = 0
+    seen = {}  # 文件名 -> 来源栏目，检测跨栏目同名冲突
+    for section_dir in sorted(CONTENT_DIR.iterdir()):
+        if not section_dir.is_dir():
+            continue
+        for asset in section_dir.iterdir():
+            if not asset.is_file() or asset.suffix.lower() == ".md":
+                continue
+            if asset.name.startswith("_"):
+                continue
+            if asset.name in seen:
+                sys.exit(f"[error] 资产文件名冲突: content/{section_dir.name}/{asset.name} 与 content/{seen[asset.name]}/{asset.name} 同名，请改名为带栏目前缀的名称")
+            seen[asset.name] = section_dir.name
+            shutil.copy2(asset, ASSETS_OUT_DIR / asset.name)
+            count += 1
+    print(f"[build] assets          -> {count} 个文件")
+    return count
+
+
 def build_tags(all_items):
     """标签聚合接口: /api/tags.json"""
     tags = {}
@@ -198,6 +234,9 @@ def main():
     if OUT_DIR.is_dir():
         shutil.rmtree(OUT_DIR)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    # 同步清空静态资产目录（删除源资产后不残留过期图片）
+    if ASSETS_OUT_DIR.is_dir():
+        shutil.rmtree(ASSETS_OUT_DIR)
 
     # 站点配置 -> /api/site.json
     if SITE_CONFIG.is_file():
@@ -217,6 +256,9 @@ def main():
         all_items[section] = items
         total += len(items)
         print(f"[build] {section:10s} -> {len(items)} 篇")
+
+    # 静态资产分发（content/*/*.png 等 -> web/public/assets/）
+    build_assets()
 
     tags = build_tags(all_items)
     build_search(all_items)

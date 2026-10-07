@@ -262,7 +262,7 @@
     "section": "papers",
     "slug": "fidesr-one-step-diffusion-super-resolution",
     "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
-    "summary": "庆北大学提出的单步扩散超分框架 FiDeSR，用细节感知加权、潜空间残差精化与频率注入三个组件，在 1 步推理内同时拉满感知质量与结构保真，全面超越 PiSA-SR 等一步方法。",
+    "summary": "庆北大学 + KETI 的单步扩散超分框架 FiDeSR。三个组件——细节感知加权 DAW（训练）、潜空间残差精化 LRRB、频率注入 LFIM（推理免重训）——在只走 1 步扩散的前提下同时拉满结构保真（PSNR/SSIM/FID）与感知锐度（MUSIQ/MANIQA），全面超越 PiSA-SR 等一步方法。",
     "tags": [
       "论文精读",
       "扩散模型",
