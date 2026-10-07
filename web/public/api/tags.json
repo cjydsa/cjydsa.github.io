@@ -334,5 +334,45 @@
       "title": "P2G-HAI：人物图像服装还原模型",
       "date": "2025-12-01"
     }
+  ],
+  "论文精读": [
+    {
+      "section": "papers",
+      "slug": "fidesr-one-step-diffusion-super-resolution",
+      "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
+      "date": "2026-10-07"
+    }
+  ],
+  "扩散模型": [
+    {
+      "section": "papers",
+      "slug": "fidesr-one-step-diffusion-super-resolution",
+      "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
+      "date": "2026-10-07"
+    }
+  ],
+  "超分辨率": [
+    {
+      "section": "papers",
+      "slug": "fidesr-one-step-diffusion-super-resolution",
+      "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
+      "date": "2026-10-07"
+    }
+  ],
+  "图像恢复": [
+    {
+      "section": "papers",
+      "slug": "fidesr-one-step-diffusion-super-resolution",
+      "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
+      "date": "2026-10-07"
+    }
+  ],
+  "CVPR2026": [
+    {
+      "section": "papers",
+      "slug": "fidesr-one-step-diffusion-super-resolution",
+      "title": "FiDeSR: 高保真且细节保持的单步扩散超分辨率（CVPR 2026）",
+      "date": "2026-10-07"
+    }
   ]
 }
