@@ -1,6 +1,17 @@
 [
   {
     "section": "daily",
+    "slug": "2026-10-10",
+    "title": "AI 每日快报 | 2026-10-10",
+    "summary": "当日AI领域重要进展摘要",
+    "tags": [
+      "AI",
+      "Daily Brief"
+    ],
+    "date": "2026-10-10"
+  },
+  {
+    "section": "daily",
     "slug": "2026-10-07",
     "title": "AI 每日快报 | 2026-10-07",
     "summary": "当日AI领域重要进展摘要",
